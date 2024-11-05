@@ -1,0 +1,35 @@
+General Requirements:
+
+1- Create a straightforward console application for managing vegetable garden data.
+2- The console must be implemented by SpringBoot with Maven or Gradle.
+3- Store information about gardens and the plants within them.
+4- Create basic data operations for gardens and plants.
+5- Display the data for gardens and plants in specific requirements listed below.
+6- Document the the entities as an ER Diagram to show the Garden and Plant data and their relationships.
+7- For each entity, implement a repository and service layer.
+8- Use CommandLineRunner to execute the application.
+9- The project must be submitted to github.
+10- In the project, create docs folder and save the following:
+    . All screenshots of the ongoing working.
+    . ERD diagram as an image
+    . Requirements file a text file.
+ 
+
+-----
+
+Business Requirements / More Details:
+
+1- The Garden entity contains (ID, Name, Size)
+2- The Plant entity contains (ID, Name, Type, plantDate, Garden)
+3- For each entity, implement the CRUD operations, and use the save to init the testing data.
+4- Implement plant repository/service operations as follow:
+      . Retrieve all Plants -> sorted by name.
+      . Retrieve all Plants -> sorted by plantDate.
+5- The app must initiated by testing data.
+6- The app-runner output as the following:
+      . Print all Gardens.
+      . Print all Plants sorted by plant-name.
+      . Print all Plants sorted by plant-date.
+
+
+
