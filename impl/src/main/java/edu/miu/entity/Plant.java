@@ -1,32 +1,34 @@
 package edu.miu.entity;
 
-import lombok.Data;
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
-public class Course {
+public class Plant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
+    private String type;
+    private Date plantDate;
 
     @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
-
-    @ManyToMany(mappedBy = "courses")
-    private List<Professor> professors;
+    @JoinColumn(name = "garden_id")
+    private Garden garden;
 
     @Override
     public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", department=" + department +
-                ", professors=" + professors +
+        return "Plant{" +
+                "ID = " + id +
+                ", Name = '" + name + '\'' +
+                ", Type = '" + type + '\'' +
+                ", plantDate = " + plantDate +
+                ", garden = " + garden.getName() +
                 '}';
     }
 }

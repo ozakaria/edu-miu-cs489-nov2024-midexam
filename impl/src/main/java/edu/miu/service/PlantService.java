@@ -1,6 +1,7 @@
 package edu.miu.service;
 
-import edu.miu.repository.GardenRepository;
+import edu.miu.entity.Plant;
+import edu.miu.repository.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,32 +12,30 @@ import java.util.Optional;
 public class PlantService {
 
     @Autowired
-    private GardenRepository gardenRepository;
+    private PlantRepository plantRepository;
 
-//    public List<Professor> getAllProfessorsSortedByLastName() {
-//        return professorRepository.findAllByOrderByLastNameAsc();
-//    }
-//
-//    public Professor setAddressForProfessor(Long professorId, Address address) {
-//        Optional<Professor> professorOpt = professorRepository.findById(professorId);
-//        if (professorOpt.isPresent()) {
-//            Professor professor = professorOpt.get();
-//            professor.setAddress(address);
-//            return professorRepository.save(professor);
-//        }
-//        return null;
-//    }
-//
-//    public Professor save(Professor professor) {
-//        return professorRepository.save(professor);
-//    }
-//
-//    public Optional<Professor> findById(Long id) {
-//        return professorRepository.findById(id);
-//    }
-//
-//    public List<Professor> findAll() {
-//        return professorRepository.findAll();
-//    }
+    public Plant save(Plant plant) {
+        return plantRepository.save(plant);
+    }
+
+    public void delete(Long plantId) {
+        this.findById(plantId).ifPresent(plant -> plantRepository.delete(plant));
+    }
+
+    public Optional<Plant> findById(Long id) {
+        return plantRepository.findById(id);
+    }
+
+    public List<Plant> findAll() {
+        return plantRepository.findAll();
+    }
+
+    public List<Plant> findAllSortedByName() {
+        return plantRepository.findAllByOrderByNameAsc();
+    }
+
+    public List<Plant> findAllSortedByDate() {
+        return plantRepository.findAllByOrderByPlantDateAsc();
+    }
 
 }

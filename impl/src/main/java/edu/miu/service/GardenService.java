@@ -13,8 +13,6 @@ public class GardenService {
 
     @Autowired
     private GardenRepository gardenRepository;
-//    @Autowired
-//    private PlantService plantService;
 
     public Garden save(Garden garden) {
         return gardenRepository.save(garden);
@@ -32,18 +30,4 @@ public class GardenService {
         return gardenRepository.findAll();
     }
 
-//    public List<Professor> getAllProfessorsSortedByLastName() {
-//        return professorRepository.findAllByOrderByLastNameAsc();
-//    }
-//
-//    public Professor setAddressForProfessor(Long professorId, Address address) {
-//        Optional<Professor> professorOpt = professorRepository.findById(professorId);
-//        if (professorOpt.isPresent()) {
-//            Professor professor = professorOpt.get();
-//            professor.setAddress(address);
-//            return professorRepository.save(professor);
-//        }
-//        return null;
-//    }
-//
 }

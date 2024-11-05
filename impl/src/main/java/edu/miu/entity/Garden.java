@@ -7,38 +7,23 @@ import java.util.List;
 
 @Entity
 @Data
-public class Professor {
+public class Garden {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-    private String lastName;
+    private String name;
+    private Double size;
 
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "professor_course",
-            joinColumns = @JoinColumn(name = "professor_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id")
-    )
-    private List<Course> courses;
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
+    @OneToMany(mappedBy = "garden", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Plant> plants;
 
     @Override
     public String toString() {
-        return "Professor{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", department=" + (department != null ? department.getName() : "null") +
+        return "Garden{" +
+                "ID = " + id +
+                ", Name = '" + name + '\'' +
+                ", Size = " + size + " m2"+
                 '}';
     }
-
 }
