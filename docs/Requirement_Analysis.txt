@@ -23,12 +23,12 @@ Business Requirements / More Details:
 2- The Plant entity contains (ID, Name, Type, plantDate, Garden)
 3- For each Garden, it contains number of specific Plants.
 4- For each Plant, it assigned for one Garden.  
-4- For each entity, implement the CRUD operations, and use the save to init the testing data.
-5- Implement plant repository/service operations as follow:
+5- For each entity, implement the CRUD operations, and use the save to init the testing data.
+6- Implement plant repository/service operations as follow:
       . Retrieve all Plants -> sorted by name.
       . Retrieve all Plants -> sorted by plantDate.
-6- The app must initiated by testing data.
-7- The app-runner output as the following:
+7- The app must initiated by testing data.
+8- The app-runner output as the following:
       . Print all Gardens.
       . Print all Plants sorted by plant-name.
       . Print all Plants sorted by plant-date.
